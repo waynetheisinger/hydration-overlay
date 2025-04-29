@@ -49,6 +49,16 @@
         "default": "./dist/webpack.cjs"
       }
     },
+    "./vite": {
+      "import": {
+        "types": "./dist/vite.d.ts",
+        "default": "./dist/vite.mjs"
+      },
+      "require": {
+        "types": "./dist/vite.d.cts",
+        "default": "./dist/vite.cjs"
+      }
+    },
     "./hydration-overlay-initializer": "./dist/hydration-overlay-initializer.js"
   },
   "scripts": {
@@ -61,7 +71,9 @@
     "react": "^16.14.0 || ^17.0.0 || ^18.0.0",
     "react-dom": "^16.14.0 || ^17.0.0 || ^18.0.0",
     "webpack": "^4.0.0 || ^5.0.0",
-    "@spotlightjs/spotlight": "^1.2.11 || ^2.1.0"
+    "@spotlightjs/spotlight": "^1.2.11 || ^2.1.0",
+    "vite": ">=4.0.0",
+    "@remix-run/dev": ">=1.0.0"
   },
   "peerDependenciesMeta": {
     "@spotlightjs/spotlight": {
