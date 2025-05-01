@@ -1,12 +1,25 @@
+import type { MetaFunction } from "@remix-run/node";
+
+export const meta: MetaFunction = () => {
+  return [
+    { title: "New Remix App" },
+    { name: "description", content: "Welcome to Remix!" },
+  ];
+};
+
 export default function Index() {
   return (
-    <div>
-      <h1>Welcome to Remix</h1>
-      <div>{Math.random()}</div>
-      <button style={{ all: "unset" }}>Hello world</button>
-      <span style={{ color: "green", backgroundColor: "black" }}>
-        Hello world
-      </span>
-    </div>
+      <>
+        <div>normal content</div>
+        {typeof window === "undefined" ? (
+            <div>SERVER RENDERED DIV</div>
+        ) : (
+            <span>BROWSER RENDERED SPAN</span>
+        )}
+        <div>
+          <div>Hello world!</div>
+          <button>CLOSE</button>
+        </div>
+      </>
   );
 }

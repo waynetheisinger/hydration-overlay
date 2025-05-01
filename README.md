@@ -46,7 +46,7 @@ export default function RootLayout({ children }) {
 
 ### Plugin
 
-Second, add the plugin for your framework. Currently, we support Next.js & webpack.
+Second, add the plugin for your framework. Currently, we support Next.js, webpack & Vite (and therefore Remix).
 
 #### Next.js
 
@@ -97,6 +97,42 @@ const nextConfig = {
 module.exports = nextConfig;
 ```
 
+#### Vite
+Here is an example (with Remix), using the Vite helper directly:
+
+```js
+// vite.config.js
+import { defineConfig } from "vite";
+import { withHydrationOverlayVite } from "@builder.io/react-hydration-overlay/lib/vite";
+
+export default defineConfig({
+  plugins: [
+    withHydrationOverlayVite({
+      appRootSelector: "body",          // your root
+      entry: /entry\.client\.(t|j)sx?$/ // your client entry(s)
+    }),
+  ],
+});
+```
+Then in app/entry.client.tsx, you still wrap your tree:
+```js
+import { startTransition, StrictMode } from "react";
+import { hydrateRoot } from "react-dom/client";
+import { RemixBrowser } from "@remix-run/react";
+import { HydrationOverlay } from "@builder.io/react-hydration-overlay";
+
+startTransition(() => {
+  hydrateRoot(
+    document,
+    <StrictMode>
+      <HydrationOverlay>
+        <RemixBrowser />
+      </HydrationOverlay>
+    </StrictMode>
+  );
+});
+```
+
 ## Notes
 
 - This package is currently in beta. Please report any issues you find!
@@ -120,8 +156,8 @@ Therefore, this tool will give you false positives for style changes.
 To add support for other frameworks, what is needed is a plugin that injects the `hydration-overlay-initializer.js` script into the app's entry point. See [next.ts](./packages/lib/src/next.ts) plugin for more information. PRs welcome!
 
 - [x] Next.js
-- [ ] Remix
-- [ ] Vite SSR
+- [x] Remix
+- [x] Vite SSR
 
 ## Release process
 
