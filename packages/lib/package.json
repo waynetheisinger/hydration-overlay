@@ -65,7 +65,8 @@
     "build": "bunchee",
     "pkg:attw": "attw --pack .",
     "pkg:publint": "publint --strict",
-    "lint-pkg": "pnpm pkg:publint && pnpm pkg:attw"
+    "lint-pkg": "pnpm pkg:publint && pnpm pkg:attw",
+    "prepare": "pnpm build"
   },
   "peerDependencies": {
     "react": "^16.14.0 || ^17.0.0 || ^18.0.0",
