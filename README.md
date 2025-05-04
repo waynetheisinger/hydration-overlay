@@ -1,4 +1,9 @@
-# Hydration Overlay 🕵️
+# Temporary: Hydration Overlay 🕵️
+
+This is a fork of https://www.npmjs.com/package/next-hydration-overlay while I wait for https://github.com/BuilderIO/hydration-overlay/pull/58...
+and it will not be maintained. 
+
+Use the source repo in preference unless you also need the Remix support, and the PR is unmerged.
 
 This package displays an overlay during Hydration Errors, providing an explicit diff between the server-side and client-side renders.
 
