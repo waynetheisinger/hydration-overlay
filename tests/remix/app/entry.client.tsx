@@ -7,7 +7,7 @@
 import { RemixBrowser } from "@remix-run/react";
 import { startTransition, StrictMode } from "react";
 import { hydrateRoot } from "react-dom/client";
-import { HydrationOverlay } from "@builder.io/react-hydration-overlay";
+import { HydrationOverlay } from "@wayneintacart/react-hydration-overlay";
 
 startTransition(() => {
   hydrateRoot(

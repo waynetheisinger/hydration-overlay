@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@builder.io/react-hydration-overlay": "workspace:*",
+    "@wayneintacart/react-hydration-overlay": "workspace:*",
     "react": "^18",
     "react-dom": "^18",
     "next": "14.0.4"

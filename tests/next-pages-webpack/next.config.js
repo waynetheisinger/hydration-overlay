@@ -1,6 +1,6 @@
 const {
   withHydrationOverlayWebpack,
-} = require("@builder.io/react-hydration-overlay/webpack");
+} = require("@wayneintacart/react-hydration-overlay/webpack");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

@@ -1,4 +1,4 @@
-import { withHydrationOverlay } from "@builder.io/react-hydration-overlay/next";
+import { withHydrationOverlay } from "@wayneintacart/react-hydration-overlay/next";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

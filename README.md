@@ -12,7 +12,7 @@ This package displays an overlay during Hydration Errors, providing an explicit 
 ## Installation
 
 ```bash
-npm install @builder.io/react-hydration-overlay
+npm install @wayneintacart/react-hydration-overlay
 ```
 
 ## Usage
@@ -22,7 +22,7 @@ npm install @builder.io/react-hydration-overlay
 First, wrap the root of your app in the `HydrationOverlay` component.
 
 ```tsx
-import { HydrationOverlay } from "@builder.io/react-hydration-overlay";
+import { HydrationOverlay } from "@wayneintacart/react-hydration-overlay";
 
 export default function App() {
   return (
@@ -36,7 +36,7 @@ export default function App() {
 Or, in the Next.js App Router, wrap `{children}` in your [root layout](https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts#root-layout-required):
 
 ```tsx
-import { HydrationOverlay } from "@builder.io/react-hydration-overlay";
+import { HydrationOverlay } from "@wayneintacart/react-hydration-overlay";
 
 export default function RootLayout({ children }) {
   return (
@@ -60,7 +60,7 @@ in `next.config.js`:
 ```js
 const {
   withHydrationOverlay,
-} = require("@builder.io/react-hydration-overlay/next");
+} = require("@wayneintacart/react-hydration-overlay/next");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -83,7 +83,7 @@ Here is an example (still with Next), but using the webpack helper directly:
 ```ts
 const {
   withHydrationOverlayWebpack,
-} = require("@builder.io/react-hydration-overlay/webpack");
+} = require("@wayneintacart/react-hydration-overlay/webpack");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -108,7 +108,7 @@ Here is an example (with Remix), using the Vite helper directly:
 ```js
 // vite.config.js
 import { defineConfig } from "vite";
-import { withHydrationOverlayVite } from "@builder.io/react-hydration-overlay/lib/vite";
+import { withHydrationOverlayVite } from "@wayneintacart/react-hydration-overlay/lib/vite";
 
 export default defineConfig({
   plugins: [
@@ -124,7 +124,7 @@ Then in app/entry.client.tsx, you still wrap your tree:
 import { startTransition, StrictMode } from "react";
 import { hydrateRoot } from "react-dom/client";
 import { RemixBrowser } from "@remix-run/react";
-import { HydrationOverlay } from "@builder.io/react-hydration-overlay";
+import { HydrationOverlay } from "@wayneintacart/react-hydration-overlay";
 
 startTransition(() => {
   hydrateRoot(
@@ -185,10 +185,10 @@ Once your PR is merged, the `changeset` bot will open a PR with the changeset. Y
 <br>
 
 <p align="center">
-   <a href="https://www.builder.io/m/developers">
+   <a href="https://www.wayneintacart/m/developers">
       <picture>
          <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/844291/230786554-eb225eeb-2f6b-4286-b8c2-535b1131744a.png">
-         <img width="250" alt="Made with love by Builder.io" src="https://user-images.githubusercontent.com/844291/230786555-a58479e4-75f3-4222-a6eb-74c5af953eac.png">
+         <img width="250" alt="Made with love by wayneintacart" src="https://user-images.githubusercontent.com/844291/230786555-a58479e4-75f3-4222-a6eb-74c5af953eac.png">
        </picture>
    </a>
 </p>

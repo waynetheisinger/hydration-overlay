@@ -15,7 +15,7 @@ export function withHydrationOverlayVite(opts: VitePluginOptions = {}): Plugin {
     // this is how we recognize the initializer import
     const initModuleName = "hydration-overlay-initializer.js";
     const initImportSpecifier =
-        "@builder.io/react-hydration-overlay/hydration-overlay-initializer";
+        "@wayneintacart/react-hydration-overlay/hydration-overlay-initializer";
 
     return {
         name: "react-hydration-overlay-vite",

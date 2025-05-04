@@ -1,4 +1,4 @@
-# @builder.io/react-hydration-overlay
+# @wayneintacart/react-hydration-overlay
 
 ## 0.3.0
 
@@ -74,7 +74,7 @@
   ```ts
   const {
     withHydrationOverlayWebpack,
-  } = require("@builder.io/react-hydration-overlay/webpack");
+  } = require("@wayneintacart/react-hydration-overlay/webpack");
 
   /** @type {import('next').NextConfig} */
   const nextConfig = {
@@ -116,4 +116,4 @@
 - 9545fce: Initial Release:
 
   - added `HydrationOverlay` component.
-  - added Next.js plugin at `@builder.io/react-hydration-overlay/next`
+  - added Next.js plugin at `@wayneintacart/react-hydration-overlay/next`

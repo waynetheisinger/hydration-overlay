@@ -1,7 +1,7 @@
 // @ts-ignore
 const {
   withHydrationOverlay,
-} = require("@builder.io/react-hydration-overlay/next");
+} = require("@wayneintacart/react-hydration-overlay/next");
 const WebpackHookPlugin = require("webpack-hook-plugin");
 
 /** @type {import('next').NextConfig} */

@@ -72,7 +72,7 @@ importers:
 
   tests/next-app-dir:
     dependencies:
-      '@builder.io/react-hydration-overlay':
+      '@wayneintacart/react-hydration-overlay':
         specifier: workspace:*
         version: link:../../packages/lib
       next:
@@ -106,7 +106,7 @@ importers:
 
   tests/next-app-dir-with-sentry-spotlight:
     dependencies:
-      '@builder.io/react-hydration-overlay':
+      '@wayneintacart/react-hydration-overlay':
         specifier: workspace:*
         version: link:../../packages/lib
       '@sentry/nextjs':
@@ -149,7 +149,7 @@ importers:
 
   tests/next-pages:
     dependencies:
-      '@builder.io/react-hydration-overlay':
+      '@wayneintacart/react-hydration-overlay':
         specifier: workspace:*
         version: link:../../packages/lib
       next:
@@ -183,7 +183,7 @@ importers:
 
   tests/next-pages-esm:
     dependencies:
-      '@builder.io/react-hydration-overlay':
+      '@wayneintacart/react-hydration-overlay':
         specifier: workspace:*
         version: link:../../packages/lib
       next:
@@ -217,7 +217,7 @@ importers:
 
   tests/next-pages-webpack:
     dependencies:
-      '@builder.io/react-hydration-overlay':
+      '@wayneintacart/react-hydration-overlay':
         specifier: workspace:*
         version: link:../../packages/lib
       next:
@@ -251,7 +251,7 @@ importers:
 
   tests/remix:
     dependencies:
-      '@builder.io/react-hydration-overlay':
+      '@wayneintacart/react-hydration-overlay':
         specifier: workspace:*
         version: link:../../packages/lib
       '@remix-run/node':
