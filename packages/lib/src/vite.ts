@@ -22,6 +22,9 @@ export function withHydrationOverlayVite(opts: VitePluginOptions = {}): Plugin {
         enforce: "pre",
 
         config(userConfig: UserConfig, env: ConfigEnv): Partial<UserConfig> {
+            const existingDefine = userConfig.optimizeDeps?.esbuildOptions?.define || {};
+            const existingEsbuildOptions = userConfig.optimizeDeps?.esbuildOptions || {};
+
             return {
                 ...userConfig,
                 define: {
@@ -32,9 +35,9 @@ export function withHydrationOverlayVite(opts: VitePluginOptions = {}): Plugin {
                 optimizeDeps: {
                     ...(userConfig.optimizeDeps || {}),
                     esbuildOptions: {
-                        ...((userConfig.optimizeDeps as any).esbuildOptions || {}),
+                        ...existingEsbuildOptions,
                         define: {
-                            ...(((userConfig.optimizeDeps as any).esbuildOptions?.define) || {}),
+                            ...existingDefine,
                             "window.BUILDER_HYDRATION_OVERLAY.APP_ROOT_SELECTOR":
                                 JSON.stringify(selector),
                         },
