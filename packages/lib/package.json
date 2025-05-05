@@ -1,6 +1,6 @@
 {
   "name": "@wayneintacart/react-hydration-overlay",
-  "description": "React utility for descriptive hydration mismatch errors.",
+  "description": "Fork of React utility for descriptive hydration mismatch errors.",
   "version": "0.3.0",
   "publishConfig": {
     "access": "public"
