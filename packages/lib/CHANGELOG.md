@@ -1,5 +1,11 @@
 # @wayneintacart/react-hydration-overlay
 
+## 0.4.0
+
+### Minor Changes
+
+- 2309bda: Add Vite & Remix support
+
 ## 0.3.0
 
 ### Minor Changes
