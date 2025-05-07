@@ -1,8 +1,8 @@
 "use client";
 
 import beautify from "beautify";
-import { createPortal } from "react-dom";
-import React, { useEffect, useState } from "react";
+import createPortal from "react-dom";
+import React, { useEffect, useState, useRef } from "react";
 import ReactDiffViewer, { DiffMethod } from "react-diff-viewer-continued";
 import { OverlayProps } from "./types";
 
@@ -25,7 +25,17 @@ export function Overlay({ integrations }: OverlayProps) {
   const [showModal, setShowModal] = useState(true);
   const [hasHydrationMismatch, setHasHydrationMismatch] = useState(false);
 
-  useEffect(() => {
+const hostRef = useRef<HTMLDivElement | null>(null);
+const [shadowRoot, setShadowRoot] = useState<ShadowRoot | null>(null);
+
+useEffect(() => {
+    if (hostRef.current && !shadowRoot) {
+        const shadow = hostRef.current.attachShadow({ mode: "open" });
+        setShadowRoot(shadow);
+    }
+}, []);
+
+    useEffect(() => {
     if (!window.BUILDER_HYDRATION_OVERLAY) {
       console.warn(
         "[ReactHydrationOverlay]: No `window.BUILDER_HYDRATION_OVERLAY` found. Make sure the initializer script is properly injected into your app's entry point."
@@ -157,6 +167,11 @@ export function Overlay({ integrations }: OverlayProps) {
       console.error("[ReactHydrationOverlay]: Error importing spotlight package:", error);
     });
   } else {
-    return createPortal(renderOverlay(), document.body);
+    return (
+      <>
+        <div ref={hostRef} />
+        {shadowRoot && createPortal(renderOverlay(), shadowRoot)}
+      </>
+    );
   }
 }
