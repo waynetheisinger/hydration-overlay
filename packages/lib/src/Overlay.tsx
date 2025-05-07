@@ -1,8 +1,8 @@
 "use client";
 
 import beautify from "beautify";
-import createPortal from "react-dom";
-import React, { useEffect, useState, useRef } from "react";
+import { createPortal } from "react-dom";
+import React, { useEffect, useState } from "react";
 import ReactDiffViewer, { DiffMethod } from "react-diff-viewer-continued";
 import { OverlayProps } from "./types";
 
@@ -25,17 +25,7 @@ export function Overlay({ integrations }: OverlayProps) {
   const [showModal, setShowModal] = useState(true);
   const [hasHydrationMismatch, setHasHydrationMismatch] = useState(false);
 
-const hostRef = useRef<HTMLDivElement | null>(null);
-const [shadowRoot, setShadowRoot] = useState<ShadowRoot | null>(null);
-
-useEffect(() => {
-    if (hostRef.current && !shadowRoot) {
-        const shadow = hostRef.current.attachShadow({ mode: "open" });
-        setShadowRoot(shadow);
-    }
-}, []);
-
-    useEffect(() => {
+  useEffect(() => {
     if (!window.BUILDER_HYDRATION_OVERLAY) {
       console.warn(
         "[ReactHydrationOverlay]: No `window.BUILDER_HYDRATION_OVERLAY` found. Make sure the initializer script is properly injected into your app's entry point."
@@ -75,6 +65,7 @@ useEffect(() => {
     return (
       <div
         style={{
+          all: "initial",
           position: "absolute",
           top: 0,
           left: 0,
@@ -92,6 +83,7 @@ useEffect(() => {
       >
         <div
           style={{
+            all: "initial",
             zIndex: 999999,
             margin: "4rem 6rem",
             backgroundColor: "white",
@@ -107,6 +99,7 @@ useEffect(() => {
           <div style={{ display: "flex", flexDirection: "column" }}>
             <div
               style={{
+                all: "initial",
                 display: "flex",
                 justifyContent: "space-between",
                 borderBottom: "1px solid black",
@@ -115,9 +108,11 @@ useEffect(() => {
             >
               <div
                 style={{
+                  all: "initial",
                   fontSize: "2rem",
                   fontWeight: "bold",
                   padding: "1rem",
+                  fontFamily: 'sans-serif'
                 }}
               >
                 Hydration Mismatch Occurred
@@ -132,6 +127,7 @@ useEffect(() => {
                   backgroundColor: "#212529",
                   borderRadius: "0.25rem",
                   color: "white",
+                  fontFamily: 'sans-serif'
                 }}
                 onClick={hideModal}
               >
@@ -167,11 +163,6 @@ useEffect(() => {
       console.error("[ReactHydrationOverlay]: Error importing spotlight package:", error);
     });
   } else {
-    return (
-      <>
-        <div ref={hostRef} />
-        {shadowRoot && createPortal(renderOverlay(), shadowRoot)}
-      </>
-    );
+    return createPortal(renderOverlay(), document.body);
   }
 }
