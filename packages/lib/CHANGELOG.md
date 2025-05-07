@@ -4,7 +4,7 @@
 
 ### Patch Changes
 
-- 03adb29: Adds shadow dom
+- 03adb29: Isolates CSS
 
 ## 0.4.0
 
