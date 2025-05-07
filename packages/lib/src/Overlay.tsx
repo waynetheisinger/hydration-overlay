@@ -65,6 +65,7 @@ export function Overlay({ integrations }: OverlayProps) {
     return (
       <div
         style={{
+          all: "initial",
           position: "absolute",
           top: 0,
           left: 0,
@@ -82,6 +83,7 @@ export function Overlay({ integrations }: OverlayProps) {
       >
         <div
           style={{
+            all: "initial",
             zIndex: 999999,
             margin: "4rem 6rem",
             backgroundColor: "white",
@@ -97,6 +99,7 @@ export function Overlay({ integrations }: OverlayProps) {
           <div style={{ display: "flex", flexDirection: "column" }}>
             <div
               style={{
+                all: "initial",
                 display: "flex",
                 justifyContent: "space-between",
                 borderBottom: "1px solid black",
@@ -105,9 +108,11 @@ export function Overlay({ integrations }: OverlayProps) {
             >
               <div
                 style={{
+                  all: "initial",
                   fontSize: "2rem",
                   fontWeight: "bold",
                   padding: "1rem",
+                  fontFamily: 'sans-serif'
                 }}
               >
                 Hydration Mismatch Occurred
@@ -122,6 +127,7 @@ export function Overlay({ integrations }: OverlayProps) {
                   backgroundColor: "#212529",
                   borderRadius: "0.25rem",
                   color: "white",
+                  fontFamily: 'sans-serif'
                 }}
                 onClick={hideModal}
               >
